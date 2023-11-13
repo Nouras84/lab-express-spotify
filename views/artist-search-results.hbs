@@ -1,0 +1,32 @@
+{{!-- <!-- Inside artist-search-results.hbs -->
+<h1>Artist Search Results</h1>
+<ul>
+  {{#each artists}}
+    <li>
+      <h2>{{this.name}}</h2>
+      {{#if this.images.0}}
+        <img
+          src="{{this.images.0.url}}"
+          alt="{{this.name}}"
+          style="width: 100px; height: auto;"
+        />
+      {{else}}
+        <p>No image available</p>
+      {{/if}}
+      <!-- Link or button to artist's albums - for now, it's just a placeholder -->
+      <a href="/albums?artistId={{this.id}}">View Albums</a>
+    </li>
+  {{/each}}
+</ul> --}}
+
+<div class="artists-container">
+  {{#each artists}}
+    <div class="artists-container-album">
+      <p>{{name}}</p>
+      <div class="artist-image">
+        <img src={{images.0.url}} />
+      </div>
+      <a href="/albums/{{id}}">View Albums</a>
+    </div>
+  {{/each}}
+</div>
